@@ -41,7 +41,10 @@ void CompositeEquipment::NetString(){
 		Iterator<Equipment*>* ii = i->CurrentItem()->CreateIterator();
 		if(ii != NULL){
 			delete ii;
+			i->CurrentItem()->toString();
+			cout << "(";
 			i ->CurrentItem()->NetString();
+			cout << ");";
 		}else{
 			i->CurrentItem()->toString();
 			cout << ";";
